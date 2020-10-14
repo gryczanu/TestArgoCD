@@ -22,3 +22,13 @@ spec:
             value: admin
           - name: MONGO_INITDB_ROOT_PASSWORD
             value: password
+    affinity:
+      podAffinity:
+        requiredDuringSchedulingIgnoredDuringExecution:
+        - labelSelector:
+          matchExpressions:
+          - key: security
+            operator: In
+            values:
+            - S1
+        topologyKey: failure-domain.beta.kubernetes.io/zone       

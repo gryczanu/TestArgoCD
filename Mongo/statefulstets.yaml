@@ -12,7 +12,6 @@ spec:
     metadata:
       labels:
         app: database
-        selector: mongodb-standalone
     spec:
       containers:
       - name: mongodb-standalone

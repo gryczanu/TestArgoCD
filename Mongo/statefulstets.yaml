@@ -16,3 +16,5 @@ spec:
       containers:
       - name: mongodb-standalone
         image: mongo:4.0.8
+        envFrom:
+        - secretRef: test-secret

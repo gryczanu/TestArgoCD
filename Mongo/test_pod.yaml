@@ -5,6 +5,8 @@ metadata:
     app: test-pod
   name: test-pod
 spec:
+  imagePullSecrets:
+  - name: regcred
   containers:
   - command:
     - /bin/sh

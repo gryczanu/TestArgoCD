@@ -9,7 +9,7 @@ FILE_NAME="backup-$DATE.tar.gz"
 FILE="/scripts/$FILE_NAME"
 
 mongodump --uri=mongodb://$DATABASE_URI --gzip --archive=$FILE
-curl -X PUT -T ./backup-$DATE.tar.gz -H "x-ms-date: $(date -u)" -H "x-ms-blob-type: BlockBlob" "https://$STORAGE_ACCOUNT.blob.core.windows.net/$CONTAINER_NAME/$FILE_NAME?$SAS_TOKEN"
+curl -X PUT -T ./$FILE_NAME -H "x-ms-date: $(date -u)" -H "x-ms-blob-type: BlockBlob" "https://$STORAGE_ACCOUNT.blob.core.windows.net/$CONTAINER_NAME/$FILE_NAME?$SAS_TOKEN"
 
 rm $FILE
 

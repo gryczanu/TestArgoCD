@@ -7,7 +7,7 @@ echo "creating backup: $(date)"
 
 DATE=$(date +%Y%m%d_%H%M%S)
 FILE_NAME="backup-$DATE.sql.gz"
-FILE="/scripts/$FILE_NAME"
+FILE="/backups/$FILE_NAME"
 
 echo "$PGPASS" > /root/.pgpass && chmod 600 /root/.pgpass
 pg_dump -U $USERNAME -h $HOSTNAME $DATABASE| gzip > $FILE_NAME

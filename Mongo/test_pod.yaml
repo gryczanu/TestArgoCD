@@ -12,9 +12,6 @@ spec:
     - /bin/sh
     - -c
     - tail -f /dev/null
-    envFrom:
-    - secretRef:
-          name: test-secret
     image: alpine:latest
     imagePullPolicy: Always
     name: console
